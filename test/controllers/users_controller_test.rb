@@ -6,4 +6,9 @@ class UsersControllerTest < ActionController::TestCase
     assert_response :success
   end
 
+  test "should save user params" do
+  	@user = User.new
+  	assert_not_nil?(@user.attributes) if @user.save
+  end
+
 end
