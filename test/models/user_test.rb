@@ -63,6 +63,11 @@ class UserTest < ActiveSupport::TestCase
   	assert_equal mixed_case_email.downcase, @user.reload.email
   end
 
+  test "should save user params" do
+    @user = User.new
+    assert_not_nil?(@user.attributes) if @user.save
+  end
+
    test "password should be present (nonblank)" do
     @user.password = @user.password_confirmation = " " * 6
     assert_not @user.valid?
