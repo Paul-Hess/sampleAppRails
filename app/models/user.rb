@@ -12,7 +12,8 @@ class User < ActiveRecord::Base
 	
 	validates :password, presence: true, 
 											 length: { minimum: 6 },
-											 format: { with: /\A(?=.*[a-z])(?=.*[A-Z])(?=.*[\W])(?=.*[0-9]).{6,}\z/ }
+											 format: { with: /\A(?=.*[a-z])(?=.*[A-Z])(?=.*[\W])(?=.*[0-9]).{6,}\z/ },
+											 allow_nil: true
 	
 class << self
 	# Returns the hash digest of the given string.
